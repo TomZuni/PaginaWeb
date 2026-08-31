@@ -102,24 +102,31 @@ section h2 {
     letter-spacing: 1px;
 }
 
-#inicio img {
+/* CSS Grid: organiza el texto de bienvenida y la imagen en columnas */
+.inicio-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 20px;
+    align-items: center;
+}
+
+.inicio-grid img {
     display: block;
     width: 100%;
     max-width: 100%;
     height: auto;
-    margin: 15px auto 0 auto;
     border: 2px solid #e50914;
     border-radius: 8px;
 }
 
 /* ===== Productos destacados ===== */
+/* CSS Grid: crea columnas flexibles que se adaptan al ancho disponible */
 #productos ul {
     list-style: none;
     padding: 0;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 18px;
-    justify-content: center;
 }
 
 /* Selector de clase */
@@ -128,7 +135,7 @@ section h2 {
     border: 1px solid #262626;
     border-radius: 8px;
     padding: 0 0 15px 0;
-    width: 240px;
+    width: 100%;
     text-align: center;
     overflow: hidden;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.6);
@@ -190,10 +197,110 @@ section h2 {
 
 /* ===== Pie de página ===== */
 footer {
-    text-align: center;
-    padding: 16px;
+    padding: 16px 20px;
     background-color: #000000;
     color: #666666;
     font-size: 0.85rem;
     border-top: 1px solid #262626;
+}
+
+/* Flexbox: organiza el copyright y los enlaces en una misma fila */
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+.footer-content p {
+    margin: 0;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-links a {
+    color: #999999;
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+
+.footer-links a:hover {
+    color: #e50914;
+}
+
+/* =====================================================
+   DISEÑO RESPONSIVO
+   ===================================================== */
+
+/* ----- Tabletas (hasta 768px) ----- */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    main {
+        padding: 0 15px;
+    }
+
+    /* La grilla de Inicio pasa de 2 columnas a 1 */
+    .inicio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Los productos se acomodan en columnas más angostas */
+    #productos ul {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    }
+}
+
+/* ----- Móviles (hasta 480px) ----- */
+@media (max-width: 480px) {
+    header {
+        padding: 25px 15px;
+    }
+
+    header h1 {
+        font-size: 1.4rem;
+        letter-spacing: 1px;
+    }
+
+    /* El menú de navegación se apila verticalmente */
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 0;
+    }
+
+    section {
+        padding: 16px;
+    }
+
+    /* Un solo producto por fila para mejor lectura en pantallas pequeñas */
+    #productos ul {
+        grid-template-columns: 1fr;
+    }
+
+    .producto img {
+        height: 220px;
+    }
+
+    /* El pie de página apila copyright y enlaces */
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
 }
