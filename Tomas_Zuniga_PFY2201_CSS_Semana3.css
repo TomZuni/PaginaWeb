@@ -1,306 +1,225 @@
+/* =====================================================
+   Identidad visual — Tienda de Videojuegos Gamer
+   Complementa el modo oscuro nativo de Bootstrap 5.3
+   (data-bs-theme="dark"); no se redefinen selectores de
+   etiqueta (nav, header, footer, ul, li, a) para no chocar
+   con las clases de Bootstrap.
+   ===================================================== */
 
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Inter:wght@400;500&display=swap');
 
-* {
-    box-sizing: border-box;
+:root {
+    --gamer-red: #e50914;
+    --gamer-gold: #ffb800;
+    --gamer-bg: #0a0a0a;
+    --gamer-bg-alt: #141414;
+    --gamer-card: #181818;
+    --gamer-border: #2a2a2a;
+}
+
+[data-bs-theme="dark"] {
+    --bs-body-bg: var(--gamer-bg);
+    --bs-body-font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
 }
 
 body {
-    margin: 0;
-    font-family: 'Trebuchet MS', 'Segoe UI', Arial, sans-serif;
-    background-color: #0a0a0a;
-    color: #eaeaea;
-    line-height: 1.6;
+    background-image: radial-gradient(circle at top, #171717 0%, var(--gamer-bg) 60%);
 }
 
-/* ===== Encabezado ===== */
-header {
-    background-color: #000000;
-    color: #ffffff;
-    padding: 35px 20px;
-    text-align: center;
-    border-bottom: 4px solid #e50914;
-    background-image: radial-gradient(circle at top, #1a1a1a 0%, #000000 70%);
+h1, h2, h3, .navbar-brand, .display-lead {
+    font-family: 'Rajdhani', 'Inter', sans-serif;
+    font-weight: 700;
 }
 
-header h1 {
-    margin: 0 0 8px 0;
-    font-size: 2.2rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #ffffff;
-    text-shadow: 0 0 10px rgba(229, 9, 20, 0.6);
+/* ===== Navbar ===== */
+.navbar {
+    background-color: rgba(10, 10, 10, 0.92) !important;
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--gamer-border);
 }
 
-header p {
-    margin: 0;
-    font-size: 1rem;
-    color: #b3b3b3;
-}
-
-/* ===== Navegación ===== */
-nav {
-    background-color: #141414;
-}
-
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    display: block;
-    padding: 14px 12px;
-    color: #dcdcdc;
-    text-decoration: none;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-    border-bottom: 3px solid transparent;
-}
-
-/* Selector avanzado: pseudo-clase para hover */
-nav ul li a:hover {
-    border-bottom: 3px solid #e50914;
-    color: #e50914;
-}
-
-/* Marca la página en la que estamos dentro del menú */
-nav ul li a.activo {
-    border-bottom: 3px solid #e50914;
-    color: #e50914;
-}
-
-/* ===== Secciones generales ===== */
-main {
-    max-width: 950px;
-    margin: 30px auto;
-    padding: 0 20px;
-}
-
-section {
-    background-color: #141414;
-    margin-bottom: 25px;
-    padding: 22px;
-    border: 1px solid #262626;
-    border-radius: 8px;
-}
-
-section h2 {
-    color: #ffffff;
-    border-left: 5px solid #e50914;
-    padding-left: 12px;
-    margin-top: 0;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* CSS Grid: organiza el texto de bienvenida y la imagen en columnas */
-.inicio-grid {
-    display: grid;
-    grid-template-columns: 1.1fr 1fr;
-    gap: 20px;
-    align-items: center;
-}
-
-.inicio-grid img {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    border: 2px solid #e50914;
-    border-radius: 8px;
-}
-
-/* ===== Productos destacados ===== */
-/* CSS Grid: crea columnas flexibles que se adaptan al ancho disponible */
-#productos ul {
-    list-style: none;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 18px;
-}
-
-/* Selector de clase */
-.producto {
-    background-color: #1a1a1a;
-    border: 1px solid #262626;
-    border-radius: 8px;
-    padding: 0 0 15px 0;
-    width: 100%;
-    text-align: center;
-    overflow: hidden;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.6);
-    transition: transform 0.2s ease;
-}
-
-.producto:hover {
-    transform: translateY(-4px);
-    border-color: #e50914;
-}
-
-.producto h3 {
-    margin: 12px 0 6px 0;
-    color: #ffffff;
-    font-size: 1.05rem;
-    text-transform: uppercase;
+.navbar-brand {
+    font-size: 1.4rem;
     letter-spacing: 0.5px;
 }
 
-.producto p {
-    padding: 0 12px;
-    color: #b3b3b3;
+.navbar-brand span {
+    color: var(--gamer-red);
+}
+
+.navbar .nav-link {
+    font-weight: 500;
+    position: relative;
+}
+
+.navbar .nav-link.active,
+.navbar .nav-link:hover {
+    color: #fff !important;
+}
+
+.navbar .nav-link.active::after {
+    content: "";
+    position: absolute;
+    left: 0.5rem;
+    right: 0.5rem;
+    bottom: 0;
+    height: 2px;
+    background: var(--gamer-red);
+}
+
+/* ===== Hero / Carrusel ===== */
+.hero-carousel .carousel-item {
+    height: 60vh;
+    min-height: 320px;
+}
+
+.hero-carousel .carousel-item img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    filter: brightness(0.55);
+}
+
+.hero-carousel .carousel-caption {
+    bottom: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: left;
+    left: 6%;
+    right: 6%;
+    max-width: 520px;
+}
+
+.hero-carousel .carousel-caption .eyebrow {
+    color: var(--gamer-gold);
+    font-weight: 600;
     font-size: 0.9rem;
 }
 
-.producto img {
-    width: 100%;
-    height: 300px;
+.hero-carousel .carousel-caption h2 {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    line-height: 1.1;
+    margin-bottom: 0.6rem;
+}
+
+/* ===== Franja de estadísticas ===== */
+.stat-strip {
+    border-top: 1px solid var(--gamer-border);
+    border-bottom: 1px solid var(--gamer-border);
+}
+
+.stat-strip .stat h3 {
+    color: var(--gamer-gold);
+    margin-bottom: 0;
+    font-size: 2rem;
+}
+
+.stat-strip .stat small {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.7;
+}
+
+/* ===== Cards de producto ===== */
+.card-producto {
+    background-color: var(--gamer-card);
+    border: 1px solid var(--gamer-border);
+    border-top: 3px solid var(--gamer-red);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.card-producto:nth-child(even) {
+    border-top-color: var(--gamer-gold);
+}
+
+.card-producto:hover {
+    transform: translateY(-6px);
+    border-color: #3a3a3a;
+}
+
+.card-producto img {
+    height: 230px;
     object-fit: cover;
-    display: block;
 }
 
-/* Selector avanzado: nth-child para alternar un detalle de color en el borde superior */
-.producto:nth-child(odd) {
-    border-top: 3px solid #e50914;
+.card-producto .badge-genero {
+    background-color: rgba(0, 0, 0, 0.75);
+    border: 1px solid var(--gamer-border);
+    font-weight: 500;
 }
 
-.producto:nth-child(even) {
-    border-top: 3px solid #ffb800;
+.card-producto .precio {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.4rem;
+    color: var(--gamer-gold);
 }
 
-/* ===== Contacto (selector por ID) ===== */
-#contacto {
-    text-align: center;
-    background-color: #000000;
-    color: #ffffff;
-    border: 1px solid #e50914;
+.card-producto .precio-anterior {
+    text-decoration: line-through;
+    opacity: 0.5;
+    font-size: 0.95rem;
 }
 
-#contacto h2 {
-    color: #ffffff;
-    border-left-color: #ffb800;
+.card-producto .estrellas {
+    color: var(--gamer-gold);
+    font-size: 0.9rem;
 }
 
-#contacto p {
-    margin: 5px 0;
-    color: #d9d9d9;
+.btn-gamer {
+    background-color: var(--gamer-red);
+    border-color: var(--gamer-red);
+    color: #fff;
+    font-weight: 600;
 }
 
-/* ===== Pie de página ===== */
+.btn-gamer:hover {
+    background-color: #c40812;
+    border-color: #c40812;
+    color: #fff;
+}
+
+/* ===== Contacto ===== */
+.icon-box {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: rgba(229, 9, 20, 0.15);
+    color: var(--gamer-red);
+    flex-shrink: 0;
+}
+
+.contact-card {
+    background-color: var(--gamer-card);
+    border: 1px solid var(--gamer-border);
+}
+
+.form-control:focus {
+    border-color: var(--gamer-red);
+    box-shadow: 0 0 0 0.2rem rgba(229, 9, 20, 0.2);
+}
+
+/* ===== Footer ===== */
 footer {
-    padding: 16px 20px;
-    background-color: #000000;
-    color: #666666;
-    font-size: 0.85rem;
-    border-top: 1px solid #262626;
+    border-top: 1px solid var(--gamer-border);
+    background-color: var(--gamer-bg-alt);
 }
 
-/* Flexbox: organiza el copyright y los enlaces en una misma fila */
-.footer-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-    max-width: 950px;
-    margin: 0 auto;
-}
-
-.footer-content p {
-    margin: 0;
-}
-
-.footer-links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 16px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.footer-links a {
-    color: #999999;
+footer a {
     text-decoration: none;
-    font-size: 0.85rem;
 }
 
-.footer-links a:hover {
-    color: #e50914;
+footer a:hover {
+    color: var(--gamer-red) !important;
 }
 
-/* =====================================================
-   DISEÑO RESPONSIVO
-   ===================================================== */
-
-/* ----- Tabletas (hasta 768px) ----- */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 1.8rem;
-    }
-
-    main {
-        padding: 0 15px;
-    }
-
-    /* La grilla de Inicio pasa de 2 columnas a 1 */
-    .inicio-grid {
-        grid-template-columns: 1fr;
-    }
-
-    /* Los productos se acomodan en columnas más angostas */
-    #productos ul {
-        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    }
-}
-
-/* ----- Móviles (hasta 480px) ----- */
+/* ----- Responsivo ----- */
 @media (max-width: 480px) {
-    header {
-        padding: 25px 15px;
+    .hero-carousel .carousel-item {
+        height: 48vh;
+        min-height: 260px;
     }
-
-    header h1 {
-        font-size: 1.4rem;
-        letter-spacing: 1px;
-    }
-
-    /* El menú de navegación se apila verticalmente */
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav ul li {
-        margin: 0;
-    }
-
-    section {
-        padding: 16px;
-    }
-
-    /* Un solo producto por fila para mejor lectura en pantallas pequeñas */
-    #productos ul {
-        grid-template-columns: 1fr;
-    }
-
-    .producto img {
-        height: 220px;
-    }
-
-    /* El pie de página apila copyright y enlaces */
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
+    .hero-carousel .carousel-caption {
+        left: 5%;
+        right: 5%;
     }
 }

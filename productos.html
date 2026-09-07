@@ -1,71 +1,138 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tienda de Videojuegos Gamer - Productos</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="Tomas_Zuniga_PFY2201_CSS_Semana3.css">
 </head>
 
 <body>
 
-    <header>
-        <h1>Tienda de Videojuegos Gamer</h1>
-        <p>Bienvenidos a nuestra tienda de videojuegos.</p>
-    </header>
+    <!-- ===================== NAVBAR ===================== -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Tienda<span>Gamer</span></a>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="productos.html" class="activo">Productos</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-        </ul>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarMenu" aria-controls="navbarMenu"
+                aria-expanded="false" aria-label="Abrir menú de navegación">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarMenu">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="productos.html">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
+
+    <!-- ===================== ENCABEZADO DE SECCIÓN ===================== -->
+    <header class="py-5 border-bottom" style="border-color: var(--gamer-border) !important;">
+        <div class="container">
+            <p class="eyebrow text-warning mb-1">Catálogo</p>
+            <h1 class="mb-2">Productos destacados</h1>
+            <p class="text-body-secondary mb-0">Los títulos más pedidos del mes, listos para llevar a casa.</p>
+        </div>
+    </header>
 
     <main>
 
-        <section id="productos">
-            <h2>Productos destacados</h2>
+        <section id="productos" class="py-5">
+            <div class="container">
 
-            <ul>
-                <li class="producto">
-                    <img src="img/sekiro.jpg" alt="Sekiro: Shadows Die Twice">
-                    <h3>Sekiro: Shadows Die Twice</h3>
-                    <p>Acción y sigilo ambientado en el Japón feudal, con combates exigentes.</p>
-                </li>
+                <!-- ===================== GRID DE CARDS ===================== -->
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
 
-                <li class="producto">
-                    <img src="img/fc27.jpg" alt="EA Sports FC 27">
-                    <h3>EA Sports FC 27</h3>
-                    <p>Videojuego de fútbol para disfrutar con amigos.</p>
-                </li>
+                    <div class="col">
+                        <div class="card card-producto h-100 position-relative">
+                            <span class="badge badge-genero position-absolute m-2">Acción · Sigilo</span>
+                            <img src="img/sekiro.jpg" class="card-img-top" alt="Sekiro: Shadows Die Twice">
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="card-title h5">Sekiro: Shadows Die Twice</h3>
+                                <p class="card-text text-body-secondary small">Acción y sigilo ambientado en el Japón feudal, con combates exigentes.</p>
+                                <p class="estrellas mb-2"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i> <span class="text-body-secondary small">(128)</span></p>
+                                <div class="d-flex align-items-center justify-content-between mt-auto">
+                                    <div>
+                                        <span class="precio">$29.990</span>
+                                        <span class="precio-anterior ms-1">$39.990</span>
+                                    </div>
+                                    <a href="#" class="btn btn-gamer btn-sm">Agregar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                <li class="producto">
-                    <img src="img/eldenring.jpg" alt="Elden Ring">
-                    <h3>Elden Ring</h3>
-                    <p>Mundo abierto de fantasía oscura lleno de desafíos y exploración.</p>
-                </li>
-            </ul>
+                    <div class="col">
+                        <div class="card card-producto h-100 position-relative">
+                            <span class="badge badge-genero position-absolute m-2">Deportes</span>
+                            <img src="img/fc27.jpg" class="card-img-top" alt="EA Sports FC 27">
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="card-title h5">EA Sports FC 27</h3>
+                                <p class="card-text text-body-secondary small">Videojuego de fútbol para disfrutar con amigos.</p>
+                                <p class="estrellas mb-2"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i> <span class="text-body-secondary small">(342)</span></p>
+                                <div class="d-flex align-items-center justify-content-between mt-auto">
+                                    <span class="precio">$54.990</span>
+                                    <a href="#" class="btn btn-gamer btn-sm">Agregar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-            <p>
-                Visita también
-                <a href="https://www.playstation.com/es-cl/" target="_blank">PlayStation</a>
-                para conocer más videojuegos.
-            </p>
+                    <div class="col">
+                        <div class="card card-producto h-100 position-relative">
+                            <span class="badge badge-genero position-absolute m-2">Mundo abierto</span>
+                            <img src="img/eldenring.jpg" class="card-img-top" alt="Elden Ring">
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="card-title h5">Elden Ring</h3>
+                                <p class="card-text text-body-secondary small">Mundo abierto de fantasía oscura lleno de desafíos y exploración.</p>
+                                <p class="estrellas mb-2"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i> <span class="text-body-secondary small">(509)</span></p>
+                                <div class="d-flex align-items-center justify-content-between mt-auto">
+                                    <span class="precio">$44.990</span>
+                                    <a href="#" class="btn btn-gamer btn-sm">Agregar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <p class="mt-4 text-body-secondary">
+                    Visita también
+                    <a href="https://www.playstation.com/es-cl/" target="_blank" rel="noopener">PlayStation</a>
+                    para conocer más videojuegos.
+                </p>
+            </div>
         </section>
 
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <p>Tienda de Videojuegos Gamer - 2026</p>
-            <ul class="footer-links">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="productos.html">Productos</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="py-4">
+        <div class="container text-center">
+            <p class="mb-2">Tienda de Videojuegos Gamer - 2026</p>
+            <ul class="list-inline mb-0">
+                <li class="list-inline-item"><a class="text-light" href="index.html">Inicio</a></li>
+                <li class="list-inline-item text-body-secondary">·</li>
+                <li class="list-inline-item"><a class="text-light" href="productos.html">Productos</a></li>
+                <li class="list-inline-item text-body-secondary">·</li>
+                <li class="list-inline-item"><a class="text-light" href="contacto.html">Contacto</a></li>
             </ul>
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
