@@ -69,7 +69,7 @@
                                         <span class="precio">$29.990</span>
                                         <span class="precio-anterior ms-1">$39.990</span>
                                     </div>
-                                    <a href="#" class="btn btn-gamer btn-sm">Agregar</a>
+                                    <button type="button" class="btn btn-gamer btn-sm btn-agregar" data-producto="Sekiro: Shadows Die Twice">Agregar</button>
                                 </div>
                             </div>
                         </div>
@@ -85,7 +85,7 @@
                                 <p class="estrellas mb-2"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i> <span class="text-body-secondary small">(342)</span></p>
                                 <div class="d-flex align-items-center justify-content-between mt-auto">
                                     <span class="precio">$54.990</span>
-                                    <a href="#" class="btn btn-gamer btn-sm">Agregar</a>
+                                    <button type="button" class="btn btn-gamer btn-sm btn-agregar" data-producto="EA Sports FC 27">Agregar</button>
                                 </div>
                             </div>
                         </div>
@@ -101,7 +101,7 @@
                                 <p class="estrellas mb-2"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i> <span class="text-body-secondary small">(509)</span></p>
                                 <div class="d-flex align-items-center justify-content-between mt-auto">
                                     <span class="precio">$44.990</span>
-                                    <a href="#" class="btn btn-gamer btn-sm">Agregar</a>
+                                    <button type="button" class="btn btn-gamer btn-sm btn-agregar" data-producto="Elden Ring">Agregar</button>
                                 </div>
                             </div>
                         </div>
@@ -109,11 +109,23 @@
 
                 </div>
 
+                <div id="mensajeInteraccion" class="mt-3"></div>
+
                 <p class="mt-4 text-body-secondary">
                     Visita también
                     <a href="https://www.playstation.com/es-cl/" target="_blank" rel="noopener">PlayStation</a>
                     para conocer más videojuegos.
                 </p>
+            </div>
+        </section>
+
+        <!-- Datos cargados dinámicamente mediante Fetch API -->
+        <section class="py-5 border-top" style="border-color: var(--gamer-border) !important;">
+            <div class="container">
+                <p class="eyebrow text-warning mb-1">Novedades</p>
+                <h2 class="mb-2">Videojuegos recomendados</h2>
+                <p class="text-body-secondary">Estos datos se cargan dinámicamente usando Fetch API.</p>
+                <div id="datosFetch" class="row row-cols-1 row-cols-md-3 g-3"></div>
             </div>
         </section>
 
@@ -134,5 +146,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

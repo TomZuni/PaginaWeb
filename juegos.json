@@ -1,0 +1,17 @@
+[
+  {
+    "nombre": "God of War Ragnarök",
+    "genero": "Acción y aventura",
+    "precio": "$49.990"
+  },
+  {
+    "nombre": "Cyberpunk 2077",
+    "genero": "RPG y mundo abierto",
+    "precio": "$39.990"
+  },
+  {
+    "nombre": "Resident Evil 4",
+    "genero": "Terror y acción",
+    "precio": "$34.990"
+  }
+]
