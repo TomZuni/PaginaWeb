@@ -1,17 +1,6 @@
 [
-  {
-    "nombre": "God of War Ragnarök",
-    "genero": "Acción y aventura",
-    "precio": "$49.990"
-  },
-  {
-    "nombre": "Cyberpunk 2077",
-    "genero": "RPG y mundo abierto",
-    "precio": "$39.990"
-  },
-  {
-    "nombre": "Resident Evil 4",
-    "genero": "Terror y acción",
-    "precio": "$34.990"
-  }
+  {"nombre":"Elden Ring","genero":"RPG / Acción","precioNumero":39990,"imagen":"assets/img/eldenring.jpg"},
+  {"nombre":"Sekiro: Shadows Die Twice","genero":"Acción / Aventura","precioNumero":29990,"imagen":"assets/img/sekiro.jpg"},
+  {"nombre":"EA Sports FC 27","genero":"Deportes","precioNumero":49990,"imagen":"assets/img/fc27.jpg"},
+  {"nombre":"Gaming Collection","genero":"Colección Gamer","precioNumero":34990,"imagen":"assets/img/portada.jpg"}
 ]
