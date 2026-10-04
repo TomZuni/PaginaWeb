@@ -28,20 +28,3 @@ src/
 npm install
 npm run dev
 ```
-
-## Publicar en GitHub Pages
-1. En `vite.config.js`, `base` debe ser `'/NOMBRE-DEL-REPO/'` (ahora: `/PaginaWeb/`).
-2. Sube el código a la rama `main` del repositorio público:
-   ```bash
-   git add .
-   git commit -m "Semana 8: tienda con React"
-   git push origin main
-   ```
-3. Despliega (compila y sube `dist/` a la rama `gh-pages`):
-   ```bash
-   npm run deploy
-   ```
-4. En GitHub: *Settings → Pages → Branch: gh-pages / (root)*.
-5. URL final: `https://tomzuni.github.io/PaginaWeb/`
-
-> Se usa `HashRouter` (URLs con `#`) para que al recargar una página interna GitHub Pages no entregue error 404.
